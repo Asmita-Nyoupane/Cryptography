@@ -10,6 +10,10 @@ using namespace std;
 
  	for ( int i=0;i<plaintext.length();i++)
  	{
+			//alnum check wheather the character is alphanumeric or not.If the character is alphanumeric
+		 // then that character is  encrypted otherwise it remain same throughout the enryption process		
+	 if(isalnum(plaintext[i]))
+ 	{
  		for(int j=0;j<sets.length();j++)
  		{
 
@@ -18,9 +22,12 @@ using namespace std;
  				encrypt_text+=key.at(j);
  				break;
 			 }
+		}
 
 
 		 }
+		else
+	encrypt_text+=char(plaintext[i]);
 	 }
 	 return encrypt_text;
 
@@ -32,6 +39,10 @@ void decryption(string ciphertext,string key)
  	string decrypt_text="";
  	for (int i=0;i<ciphertext.length();i++)
  	{
+			//alnum check wheather the character is alphanumeric or not.If the character is alphanumeric
+		 // then that character is  decrypted otherwise it remain same throughout the deryption process
+ 	if(isalnum(ciphertext[i]))
+ 	   {
  		for(int j=0;j<key.length();j++)
  		{
 
@@ -41,6 +52,9 @@ void decryption(string ciphertext,string key)
  				break;
 			 }
 		 }
+		}
+		else
+			decrypt_text+=char(ciphertext[i]);
 	 }
 	 cout<<"After decryption cipher text becomes:"<<decrypt_text<<endl;
 
