@@ -1,3 +1,4 @@
+//text must have even number of character otherwise last character of the text missed during the encryption decryption process
 #include<iostream>
 #include<string>
 #include<regex>
